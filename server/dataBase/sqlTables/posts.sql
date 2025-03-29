@@ -1,0 +1,7 @@
+    
+     CREATE TABLE post (
+    post_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id int NOT NULL CHECK (CHAR_LENGTH(user_name) BETWEEN 3 AND 20),
+    user_userName VARCHAR(20) NOT NULL CHECK (CHAR_LENGTH(user_userName) BETWEEN 3 AND 20),
+    email VARCHAR(50) NOT NULL CHECK (CHAR_LENGTH(email) BETWEEN 5 AND 50)
+);
