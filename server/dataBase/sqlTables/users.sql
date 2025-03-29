@@ -6,3 +6,4 @@
     user_userName VARCHAR(20) NOT NULL CHECK (CHAR_LENGTH(user_userName) BETWEEN 3 AND 20),
     email VARCHAR(50) NOT NULL CHECK (CHAR_LENGTH(email) BETWEEN 5 AND 50)
 );
+
