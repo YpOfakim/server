@@ -1,4 +1,4 @@
-var path = require("path");
+var path = require("path");יייייייייייייייייייייייייי
 var mysql = require("mysql2");
 require("dotenv").config({ path: path.resolve(__dirname, "../../.env") }); // בדיקת טעינת המשתנים הסביבתיים
 
