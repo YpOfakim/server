@@ -3,51 +3,49 @@ const genericServices = require("../Services/genericServices");
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/posts", async (req, res) => {
     try {
-        const users = await genericServices.getAllRecords("users");
-        res.status(200).json(users);
+        const posts = await genericServices.getAllRecords("posts");
+        res.status(200).json(posts);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
-
-router.get("/:id", async (req, res) => {
+//לשנות את הניתוב לפי הצורך
+router.get("/posts/:id", async (req, res) => {
     try {
         const id = req.params.id;
-        const user = await genericServices.getRecordById("users", "user_id", id);
-        res.status(200).json(user);
+        const post = await genericServices.getRecordById("posts", "post_id", id);
+        res.status(200).json(post);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
 
-router.post("/", async (req, res) => {
+router.post("/posts", async (req, res) => {
     try {
-        const user = req.body;
-        const newUser = await genericServices.createRecord("users", user);
-        res.status(201).json(newUser);
+        const post = req.body;
+        const newPost = await genericServices.createRecord("posts", post);
+        res.status(201).json(newPost);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
-
 router.delete("/:id", async (req, res) => {
     try {
         const id = req.params.id;
-        await genericServices.deleteRecord("users", "user_id", id);
+        await genericServices.deleteRecord("posts", "post_id", id);
         res.status(204).send();
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
-
 router.put("/:id", async (req, res) => {
     try {
         const id = req.params.id;
-        const user = req.body;
-        const updatedUser = await genericServices.updateRecord("users", "user_id", id, user);
-        res.status(200).json(updatedUser);
+        const post = req.body;
+        const updatedPost = await genericServices.updateRecord("posts", "post_id", id, post);
+        res.status(200).json(updatedPost);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
