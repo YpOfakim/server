@@ -24,3 +24,8 @@ async function updateRecord(tableName, columnName, id, record) {
     await db.query(`UPDATE ?? SET ? WHERE ?? = ?`, [tableName, record, columnName, id]);
     return { id, ...record };
 }
+
+async function getRecordsByColumn(tableName, columnName, value) {
+    const [rows] = await db.query(`SELECT * FROM ?? WHERE ?? = ?`, [tableName, columnName, value]);
+    return rows;
+}

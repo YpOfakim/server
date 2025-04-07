@@ -15,8 +15,6 @@ require("dotenv").config({ path: path.resolve(__dirname, "../../.env") }); // ב
         (4, 'Patricia Lebsack',"Karianne", 'Julianne.OConner@kory.org'),
         (5, 'Chelsey Dietrich',"Kamren", 'Lucio_Hettinger@annie.ca')
         `;
-
-  
  
     await conDB.promise().query(insertUsers);
     console.log("Initial apartments inserted");
