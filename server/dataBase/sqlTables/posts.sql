@@ -1,5 +1,4 @@
-    
-     CREATE TABLE post (
+CREATE TABLE post (
     post_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id int NOT NULL CHECK (CHAR_LENGTH(user_name) BETWEEN 3 AND 20),
     user_userName VARCHAR(20) NOT NULL CHECK (CHAR_LENGTH(user_userName) BETWEEN 3 AND 20),
