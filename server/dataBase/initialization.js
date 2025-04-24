@@ -4,7 +4,6 @@ const conDB = require("./connectToDB");
 require("dotenv").config({ path: path.resolve(__dirname, "../../.env") }); // בדיקת טעינת המשתנים הסביבתיים
 
     // הכנסת נתונים התחלתיים לטבלת users
-
     async function initializeDB() {
         // הכנסת נתונים התחלתיים לטבלת users
         const insertUsers = `
@@ -15,12 +14,9 @@ require("dotenv").config({ path: path.resolve(__dirname, "../../.env") }); // ב
         (4, 'Patricia Lebsack',"Karianne", 'Julianne.OConner@kory.org'),
         (5, 'Chelsey Dietrich',"Kamren", 'Lucio_Hettinger@annie.ca')
         `;
-
-  
  
     await conDB.promise().query(insertUsers);
-    console.log("Initial apartments inserted");
-  
+    console.log("Initial apartments inserted"); 
     
   }
   
