@@ -1,0 +1,8 @@
+CREATE TABLE comments (
+  
+          comment_id INT AUTO_INCREMENT PRIMARY KEY,
+              post_id INT AUTO_INCREMENT FOREIGN KEY,
+    comment_name VARCHAR(20) NOT NULL CHECK (CHAR_LENGTH(comment_name) BETWEEN 3 AND 20),
+    email VARCHAR(50) NOT NULL CHECK (CHAR_LENGTH(email) BETWEEN 5 AND 50)
+    body VARCHAR(50) NOT NULL CHECK (CHAR_LENGTH(body) BETWEEN 5 AND 50)
+);
